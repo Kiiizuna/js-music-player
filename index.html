@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<!-- <meta name="referrer" content="no-referrer"> -->
 	<title>music player</title>
 	<link rel="stylesheet" type="text/css" href="common.css">
 	<link rel="stylesheet" type="text/css" href="index-g.css">
-	<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_747471_1uu0zt624ll.css
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_747471_pwaqd3cdcwq.css
 ">
 <script src='jie3.js'></script>
 <!-- <script src='original_ajax.js'></script> -->
@@ -31,11 +32,16 @@
 			<div id="j-progress-main"></div>
 		</div>
 		<div class="j-actions">
-			<span class="iconfont icon-bofang"></span>
+			<span class="iconfont icon-bofang play"></span>
 			<span class="iconfont icon-shangyishou"></span>
-			<span class="iconfont icon-xiayishou"></span>	
+			<span class="iconfont icon-xiayishou"></span>
+			<span class="iconfont icon-channel"></span>
 		</div>
-		<audio id="music-audio" src="#"></audio>
+		<div class="j-loop">
+			<span class="iconfont icon-danquxunhuan random"></span>
+			<!-- <span class="iconfont icon-suiji"></span> -->
+		</div>
+		<audio id="music-audio" src="#" loop="loop"></audio>
 	</section>
 	<script src="index.js"></script>
 </body>

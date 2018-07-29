@@ -88,6 +88,12 @@ body::after {
     cursor: pointer;
 }
 
+.icon-zanting:before {
+    content: "\e623";
+    font-size: 60px;
+    cursor: pointer;
+}
+
 .icon-shangyishou:before {
     content: "\e644";
     font-size: 40px;
@@ -95,5 +101,19 @@ body::after {
 
 .icon-xiayishou:before {
     content: "\e603";
+    font-size: 40px;
+}
+
+.j-loop {
+	float: right;
+}
+
+.icon-suiji:before {
+    content: "\e60a";
+    font-size: 40px;
+}
+
+.icon-danquxunhuan:before {
+    content: "\e624";
     font-size: 40px;
 }
