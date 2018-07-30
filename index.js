@@ -1,16 +1,26 @@
 
-// 发送ajax 获取数据
-// 处理数据控制页面
+var musicAudio = e('#music-audio')
+
+// 进度条
+var progressMove = function() {
+    // var musicAudio = e('musicAudio')
+    var progress = e('#j-progress-main')
+    var percentNum = Math.floor((musicAudio.currentTime / musicAudio.duration) * 10000 /100) + '%'
+    log('percentNum', percentNum)
+    progress.style.width = percentNum
+}
+var progressTimer = setInterval(progressMove, 300)
 
 //播放暂停按钮事件
 var playPause = function() {
-    var musicAudio = e('#music-audio')
+    // var musicAudio = e('#music-audio')
     var playBtn = e('.play')
     bindEvent(playBtn, 'click', function() {
         if (musicAudio.paused) {
             musicAudio.play()
             removeClassAll('icon-bofang')
             playBtn.classList.add('icon-zanting')
+            var progressTimer = setInterval(progressMove, 300)
         } else {
             musicAudio.pause()
             removeClassAll('icon-zanting')
@@ -22,7 +32,7 @@ playPause()
 
 // 随机or 单曲循环
 var randomLoop = function() {
-    var musicAudio = e('#music-audio')
+    // var musicAudio = e('#music-audio')
     var randomBtn = e('.random')
     bindEvent(randomBtn, 'click', function() {
         if (musicAudio.loop) {
@@ -42,6 +52,7 @@ var nextSong = function() {
     var nextBtn = e('.icon-xiayishou')
     bindEvent(nextBtn, 'click', function() {
         getSong()
+        // var progressTimer = setInterval(progressMove, 300)
     })
 }
 nextSong()
@@ -73,7 +84,9 @@ var getSong = function() {
     var url = 'http://api.jirengu.com/fm/getSong.php'
     var path = url + '?' + 'channel=' + randomChannelNum
     ajax('GET', path, function(r){
-        var musicAudio = e('#music-audio')
+        // var musicAudio = e('#music-audio')
+        var musicImg = e('#img-cover')
+        log('musicImg', musicImg)
         var response = JSON.parse(r.response)
         log('response', response)
         var responseContext = response.song[0]
@@ -86,18 +99,10 @@ var getSong = function() {
         // musicAudio.crossOrigin = 'anonymous'
         // musicAudio.setAttribute('crossorigin', 'anonymous')
         musicAudio.src = musicUrl
+        musicImg.src = picUrl
         log(musicAudio)
         musicAudio.setAttribute('data-sid', responseContext.sid)
         musicAudio.play()
-
-        var progressMove = function() {
-        var progress = e('#j-progress-main')
-        var percentNum = Math.floor((musicAudio.currentTime / musicAudio.duration) * 10000 /100) + '%'
-        log(111111, musicAudio.duration)
-        log('percentNum', percentNum)
-        progress.style.width = percentNum
-    }
-        var progressTimer = setInterval(progressMove(), 300)
     })
 }
 getSong()
@@ -134,15 +139,10 @@ var changeChannel = function() {
 }
 changeChannel()
 
-// 进度条
-var progressMove = function() {
-    var musicAudio = e('musicAudio')
-    var progress = e('#j-progress-main')
-    var percentNum = Math.floor((musicAudio.currentTime / musicAudio.duration) * 10000 /100) + '%'
-    log('percentNum', percentNum)
-    progress.width.style = percentNum
-}
-var progressTimer = setInterval(progressMove(), 300)
+
+
+
+
 
 
 
