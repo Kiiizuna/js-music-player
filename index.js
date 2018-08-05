@@ -1,15 +1,50 @@
 
 var musicAudio = e('#music-audio')
 
-// 进度条
+// 进度条随着音乐播放进度运动
 var progressMove = function() {
     // var musicAudio = e('musicAudio')
     var progress = e('#j-progress-main')
+    var progressBtn = e('#j-progress-btn')
     var percentNum = Math.floor((musicAudio.currentTime / musicAudio.duration) * 10000 /100) + '%'
     log('percentNum', percentNum)
     progress.style.width = percentNum
+    progressBtn.style.left = percentNum
 }
 var progressTimer = setInterval(progressMove, 300)
+
+// 进度条控制音乐播放
+var progressControl = function() {
+    var progress = e('#j-progress-main')
+    var progressBtn = e('#j-progress-btn')
+    bindEvent(progressBtn, 'touchstart', function() {
+        clearInterval(progressTimer)
+    })
+    // touchmove 事件
+    bindEvent(progressBtn, 'touchmove', function(e) {
+        log('e is', e)
+        var percentNum = (e.targetTouches[0].pageX - progress.offsetLeft) / progress.offsetWidth
+        if (percentNum > 1) {
+            percentNum = 1
+       } else if (percentNum < 0) {
+            percentNum = 0
+       }
+       this.style.left = percentNum * 100 + '%'
+       progress.style.width = percentNum * 100 + '%'  
+    })
+    // touchend 事件
+    bindEvent(progressBtn, 'touchend', function(e) {
+        log(898989)
+        var percentNum = (e.changedTouches[0].pageX - progress.offsetLeft) / progress.offsetWidth;
+        musicAudio.currentTime = musicAudio.duration * percentNum
+        progressTimer = setInterval(progressMove, 300)
+    })
+
+
+}
+
+progressControl()
+
 
 //播放暂停按钮事件
 var playPause = function() {
@@ -138,6 +173,8 @@ var changeChannel = function() {
     })
 }
 changeChannel()
+
+
 
 
 
