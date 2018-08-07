@@ -1,6 +1,7 @@
-html,body,section {
+html,body {
 	height: 100%;
 	overflow: hidden;
+	font-family: Arial, sans-serif;
 }
 body::after {
 	content: "";
@@ -16,36 +17,116 @@ body::after {
 }
 
 #page-music {
-	max-width: 500px;
-	min-width: 200px;
+	/*max-width: 500px;*/
+	/*min-width: 200px;*/
+	width: 100%
 	position: relative;
-	width: 800px;
-	height: 90%;
+	height: 60%;
+	min-height: 8.125rem;
 	margin: 0 auto;
 	padding-top: 20px;
 	border: 1px red solid;
 }
 
-#j-img {
-	/*background: url(lku.jpg) center center no-repeat;*/
-	/*width: 100%;*/
+#page-music #j-wrapper {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#page-music .middle {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#page-music .j-bg{
+	width: 7.8125rem;
+	height: 7.8125rem;
+	border: 0.1875rem solid rgba(245, 245, 245, 0.2);
+	border-radius: 50%;
+	background-image: url(bg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+#page-music .j-img {
+	width: 5.625rem;
+	height: 5.625rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+#page-music .j-img img {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/* footer start*/
+footer {
+	height: 26%;
+	width: 100%;
+	min-height: 3.9375rem;
+}
+
+.j-progress {
+	position: relative;
+	/*width: 500px;*/
+	width: 7.8125rem;
+	height: 0.125rem;
+	background: #CDDC39;
+	border-radius: 0.0625rem;
+	margin: 0.4rem auto 0.6rem;
+}
+
+#j-progress-main {
+	height: 100%
+	width:0;
+	background: #FF5722;
+	border-radius: 0.0625rem;
+}
+
+#j-progress-btn {
+	position: absolute;
+	left: 0;
+	width: 0.6rem;
+	height: 1.5rem;
+	top: -0.09rem;
+	background-color: #fff;
+	border-radius: 0.125rem;
+	margin-left: -0.25rem;
+}
+
+.j-actions {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0 0.625rem;
+}
+
+/*.j-bg {
 	width: 200px;
 	height: 200px;
 	margin: 0 auto;
-}
+}*/
 
-#j-img img {
+/*.j-img img {
 	width: 200px;
 	height: 200px;
 	margin: 0 auto;
-}
+}*/
 
-#timing {
+/*#timing {
 	display: inline-block;
-	/*position: absolute;*/
+	position: absolute;
 	text-align: center;
 	padding-left: 40px;
-}
+}*/
 
 #id-h1 {
 	/*position: absolute;*/
@@ -72,32 +153,9 @@ body::after {
 }
 
 
-.j-progress {
-	position: relative;
-	width: 500px;
-	background: #CDDC39;
-	border-radius: 4px;
 
-}
-#j-progress-main {
-	width: 0%;
-	background: #FF5722;
-	border-radius: 4px;
-	height: 20px;
-}
-#j-progress-btn {
-	position: absolute;
-	left: 0;
-	width: 0.6rem;
-	height: 1.5rem;
-	top: -0.1rem;
-	background-color: #fff;
-	border-radius: 0.15rem;
-}
 
-.j-actions {
-	height: 30px;
-}
+
 
 .icon-bofang:before {
     content: "\e623";

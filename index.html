@@ -2,48 +2,57 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<!-- <meta name="referrer" content="no-referrer"> -->
-	<title>music player</title>
+	<title>Meet with Music</title>
 	<link rel="stylesheet" type="text/css" href="common.css">
 	<link rel="stylesheet" type="text/css" href="index-g.css">
 	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_747471_pwaqd3cdcwq.css
 ">
 <script src='jie3.js'></script>
+<script src='flexible.js'></script>
 <!-- <script src='original_ajax.js'></script> -->
 </head>
 <body>
 	<script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.5'><\/script>".replace("HOST", location.hostname));
 //]]>
-</script>
-	<section id="page-music">			
-		<div id="j-img">
-			<img id="img-cover" src="lku.jpg">
-		</div>
-		<!-- <span id="timing">00:00 / 02:23</span> -->
-		<div class="j-title-group">
-			<h1 id="id-h1">song name</h1>
-			<div class="btns">
-				<span class="iconfont icon-collect"></span>
-				<span class="iconfont icon-like"></span>
-			</div>		
-		</div>
-		<div class="j-progress">
-			<div id="j-progress-main"></div>
-			<div id="j-progress-btn"></div>
-		</div>
-		<div class="j-actions">
-			<span class="iconfont icon-bofang play"></span>
-			<span class="iconfont icon-shangyishou"></span>
-			<span class="iconfont icon-xiayishou"></span>
-			<span class="iconfont icon-channel"></span>
-		</div>
-		<div class="j-loop">
-			<span class="iconfont icon-danquxunhuan random"></span>
-			<!-- <span class="iconfont icon-suiji"></span> -->
-		</div>
+	</script>
+		<section id="page-music">
+			<div id="j-wrapper">
+				<div class='j-bg middle'>
+					<div class="j-img middle">
+						<img class="img-cover" src="lku.jpg">
+					</div>
+				</div>	
+			</div>
+			<!-- <span id="timing">00:00 / 02:23</span> -->
+		</section>
+		<footer>
+			<div class="j-title-group">
+				<h1 id="id-h1">song name</h1>
+				<div class="singer"></div>
+				<div class="btns">
+					<span class="iconfont icon-collect"></span>
+					<span class="iconfont icon-like"></span>
+				</div>		
+			</div>
+			<div class="j-progress">
+				<div id="j-progress-main"></div>
+				<div id="j-progress-btn"></div>
+			</div>
+			<div class="j-actions">
+				<span class="iconfont icon-danquxunhuan random"></span>
+				<span class="iconfont icon-channel"></span>
+				<span class="iconfont icon-bofang play"></span>
+				<span class="iconfont icon-xiayishou"></span>
+				<span class="iconfont icon-shangyishou"></span>
+			</div>
+			<!-- <div class="j-loop">
+				<span class="iconfont icon-suiji"></span>
+			</div> -->
+		</footer>
 		<audio id="music-audio" src="#" loop="loop"></audio>
-	</section>
 	<script src="index.js"></script>
 </body>
 </html>

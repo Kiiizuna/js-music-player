@@ -13,9 +13,9 @@ var progressMove = function() {
 }
 var progressTimer = setInterval(progressMove, 300)
 
-// 进度条控制音乐播放
+// 进度条控制音乐播放-- to debug
 var progressControl = function() {
-    var progress = e('#j-progress-main')
+    var progress = e('.j-progress')
     var progressBtn = e('#j-progress-btn')
     bindEvent(progressBtn, 'touchstart', function() {
         clearInterval(progressTimer)
@@ -39,10 +39,7 @@ var progressControl = function() {
         musicAudio.currentTime = musicAudio.duration * percentNum
         progressTimer = setInterval(progressMove, 300)
     })
-
-
 }
-
 progressControl()
 
 
@@ -120,7 +117,7 @@ var getSong = function() {
     var path = url + '?' + 'channel=' + randomChannelNum
     ajax('GET', path, function(r){
         // var musicAudio = e('#music-audio')
-        var musicImg = e('#img-cover')
+        var musicImg = e('.img-cover')
         log('musicImg', musicImg)
         var response = JSON.parse(r.response)
         log('response', response)
