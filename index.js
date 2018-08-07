@@ -47,16 +47,19 @@ progressControl()
 var playPause = function() {
     // var musicAudio = e('#music-audio')
     var playBtn = e('.play')
+    var songCover = e('.img-cover')
     bindEvent(playBtn, 'click', function() {
         if (musicAudio.paused) {
             musicAudio.play()
             removeClassAll('icon-bofang')
             playBtn.classList.add('icon-zanting')
+            songCover.classList.add('rotate')
             var progressTimer = setInterval(progressMove, 300)
         } else {
             musicAudio.pause()
             removeClassAll('icon-zanting')
             playBtn.classList.add('icon-bofang')
+            songCover.classList.remove('rotate')
         }
     })
 }

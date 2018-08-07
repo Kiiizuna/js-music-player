@@ -3,6 +3,8 @@ html,body {
 	overflow: hidden;
 	font-family: Arial, sans-serif;
 }
+
+/* 全局的背景*/
 body::after {
 	content: "";
 	top:0;
@@ -85,8 +87,8 @@ footer {
 }
 
 #j-progress-main {
-	height: 100%
-	width:0;
+	height: 100%;
+	width: 0;
 	background: #FF5722;
 	border-radius: 0.0625rem;
 }
@@ -95,11 +97,12 @@ footer {
 	position: absolute;
 	left: 0;
 	width: 0.6rem;
-	height: 1.5rem;
+	height: 0.3rem;
 	top: -0.09rem;
 	background-color: #fff;
 	border-radius: 0.125rem;
 	margin-left: -0.25rem;
+	background-color: lightblue;
 }
 
 .j-actions {
@@ -107,7 +110,9 @@ footer {
 	justify-content: space-around;
 	align-items: center;
 	padding: 0 0.625rem;
+	/*filter: blur(40px);*/
 }
+
 
 /*.j-bg {
 	width: 200px;
@@ -139,11 +144,6 @@ footer {
 	position: relative;
 }
 
-/*.icon-collect:before {
-    content: "\e630";
-    font-size: 42px;
-}*/
-
 .btns {
 	border: 3px orange solid;
 	/*float: right;*/
@@ -155,40 +155,50 @@ footer {
 
 
 
-
+.icon-channel:before {
+    content: "\e653";
+    font-size: 1.1rem;
+}
 
 .icon-bofang:before {
     content: "\e623";
-    font-size: 60px;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
 .icon-zanting:before {
     content: "\e623";
-    font-size: 60px;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
 .icon-shangyishou:before {
     content: "\e644";
-    font-size: 40px;
+    font-size: 1rem;
 }
 
 .icon-xiayishou:before {
     content: "\e603";
-    font-size: 40px;
+    font-size: 1rem;
 }
 
-.j-loop {
-	float: right;
-}
 
 .icon-suiji:before {
     content: "\e60a";
-    font-size: 40px;
+    font-size: 1rem;
 }
 
 .icon-danquxunhuan:before {
     content: "\e624";
-    font-size: 40px;
+    font-size: 1.25rem;
+}
+
+.rotate {
+	animation: recordRotate 30s linear 1s infinite;
+}
+
+@keyframes recordRotate {
+	to {
+		transform: rotate(360deg);
+	}
 }
