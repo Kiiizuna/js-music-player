@@ -5,16 +5,20 @@ html,body {
 }
 
 /* 全局的背景*/
-body::after {
-	content: "";
+.bg {
+	position: absolute;
 	top:0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	position: absolute;
-	background:url(lku.jpg) center center no-repeat;
-	background-size: cover;
 	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+.bg img {
+	width: 100%;
+	height: 100%;
 	filter: blur(20px);
 }
 
@@ -26,8 +30,7 @@ body::after {
 	height: 60%;
 	min-height: 8.125rem;
 	margin: 0 auto;
-	padding-top: 20px;
-	border: 1px red solid;
+	/*padding-top: 20px;*/
 }
 
 #page-music #j-wrapper {
@@ -135,13 +138,27 @@ footer {
 
 #id-h1 {
 	/*position: absolute;*/
-	padding-bottom: 5px;
-	display: inline;
-	width: 200px;
+	width: 100%;
+	font-size: 0.4rem;
+	/*color: #fff;*/
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.singer {
+	width: 100%;
+	font-size: 0.35rem;
+	margin-top: 0.05rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .j-title-group {
-	position: relative;
+	height: 7%;
+	/*padding: 0.3rem 0 0;*/
+	min-height: 0.88rem;
+	text-align: center;
 }
 
 .btns {
@@ -153,11 +170,19 @@ footer {
 }
 
 
+.icon-suiji:before {
+    content: "\e60a";
+    font-size: 0.75rem;
+}
 
+.icon-danquxunhuan:before {
+    content: "\e624";
+    font-size: 0.668rem; 
+}
 
 .icon-channel:before {
     content: "\e653";
-    font-size: 1.1rem;
+    font-size: 0.8rem;
 }
 
 .icon-bofang:before {
@@ -172,10 +197,10 @@ footer {
     cursor: pointer;
 }
 
-.icon-shangyishou:before {
+/*.icon-shangyishou:before {
     content: "\e644";
     font-size: 1rem;
-}
+}*/
 
 .icon-xiayishou:before {
     content: "\e603";
@@ -183,14 +208,15 @@ footer {
 }
 
 
-.icon-suiji:before {
-    content: "\e60a";
-    font-size: 1rem;
-}
 
-.icon-danquxunhuan:before {
+/*.icon-danquxunhuan:before {
     content: "\e624";
     font-size: 1.25rem;
+}*/
+
+.icon-changpian:before {
+    content: "\e607";
+    font-size: 1.00rem;
 }
 
 .rotate {

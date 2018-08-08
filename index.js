@@ -127,10 +127,15 @@ var getSong = function() {
         var responseContext = response.song[0]
         var picUrl = responseContext.picture
         var title = responseContext.title
+        var singer = responseContext.artist
         log('title', typeof(title))
         var musicUrl = responseContext.url
         var titleDom = e('#id-h1')
+        var singerDiv = e('.singer')
+        var bg = e('.bg img')
         titleDom.innerText = title
+        singerDiv.innerText = singer
+        bg.src = picUrl
         // musicAudio.crossOrigin = 'anonymous'
         // musicAudio.setAttribute('crossorigin', 'anonymous')
         musicAudio.src = musicUrl
