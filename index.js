@@ -17,6 +17,7 @@ var progressTimer = setInterval(progressMove, 300)
 var progressControl = function() {
     var progress = e('.j-progress')
     var progressBtn = e('#j-progress-btn')
+    var progressMain = e('#j-progress-main')
     bindEvent(progressBtn, 'touchstart', function() {
         clearInterval(progressTimer)
     })
@@ -30,7 +31,7 @@ var progressControl = function() {
             percentNum = 0
        }
        this.style.left = percentNum * 100 + '%'
-       progress.style.width = percentNum * 100 + '%'  
+       progressMain.style.width = percentNum * 100 + '%'  
     })
     // touchend 事件
     bindEvent(progressBtn, 'touchend', function(e) {
