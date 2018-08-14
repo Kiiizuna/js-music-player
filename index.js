@@ -1,7 +1,7 @@
 
 var musicAudio = e('#music-audio')
 
-// 进度条随着音乐播放进度运动
+// 进度条随着音乐播放进度移动
 var progressMove = function() {
     // var musicAudio = e('musicAudio')
     var progress = e('#j-progress-main')
@@ -10,6 +10,9 @@ var progressMove = function() {
     log('percentNum', percentNum)
     progress.style.width = percentNum
     progressBtn.style.left = percentNum
+    if (percentNum == '100%' && !musicAudio.loop) {
+        getSong()
+    }
 }
 var progressTimer = setInterval(progressMove, 300)
 
@@ -75,6 +78,7 @@ var randomLoop = function() {
             musicAudio.loop = false
             removeClassAll('icon-danquxunhuan')
             randomBtn.classList.add('icon-suiji')
+
         } else {
             musicAudio.loop = true
             removeClassAll('icon-suiji')
