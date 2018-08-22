@@ -138,6 +138,9 @@ var getSong = function() {
         var titleDom = e('#id-h1')
         var singerDiv = e('.singer')
         var bg = e('.bg img')
+        musicAudio.dataset.ssid = responseContext.ssid
+        musicAudio.dataset.sid = responseContext.sid
+        // log('data-sid is ', data-sid)
         titleDom.innerText = title
         singerDiv.innerText = singer
         bg.src = picUrl
@@ -152,16 +155,20 @@ var getSong = function() {
 }
 getSong()
 
-// ajax 获得channel
+// ajax 获得 channel
 var getChannel = function() {
     ajax('GET', 'http://api.jirengu.com/fm/getChannels.php', function(r){
         var musicChannel = e('.icon-channel')
+        var channel = e('.channel')
         var response = JSON.parse(r.response)
         log('response', response)
         var responseChannelArr = response.channels
         log(responseChannelArr)
         getRandomChannel(responseChannelArr)
         log('channel name is', responseChannelArr[randomChannelNum].name)
+        channel.innerText = responseChannelArr[randomChannelNum].name
+        channel.dataset.id = responseChannelArr[randomChannelNum].channel_id
+        log('channel-id is', channel.dataset.id)
         getSong()
     })
 }
@@ -176,14 +183,24 @@ var getRandomChannel = function(responseChannelArr) {
 }
 
 var changeChannel = function() {
-    var channelBtn = e('.icon-channel')
+    var channelBtn = e('.icon-changpian')
     bindEvent(channelBtn, 'click', function() {
         getChannel()
-        randomChannelNum()
+        // randomChannelNum()
     })
 }
 changeChannel()
 
+
+// 获取歌词
+
+var getLyric = function() {
+    var sid = musicAudio.getAttribute('data-sid')
+    ajax('get', 'http://api.jirengu.com/fm/getLyric.php', function(r){
+
+    })
+}
+getLyric()
 
 
 

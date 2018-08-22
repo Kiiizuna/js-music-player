@@ -30,6 +30,7 @@ html,body {
 	height: 60%;
 	min-height: 8.125rem;
 	margin: 0 auto;
+	text-align: center;
 	/*padding-top: 20px;*/
 }
 
@@ -135,12 +136,17 @@ footer {
 	text-align: center;
 	padding-left: 40px;
 }*/
+.channel {
+	font-size: 0.35rem;
+	margin-top: 0.5rem;
+	color: #fff;
+} 
 
 #id-h1 {
 	/*position: absolute;*/
 	width: 100%;
 	font-size: 0.4rem;
-	/*color: #fff;*/
+	color: #fff;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -152,6 +158,7 @@ footer {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+	color: #dcdada;
 }
 
 .j-title-group {
